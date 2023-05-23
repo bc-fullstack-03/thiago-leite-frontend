@@ -1,4 +1,5 @@
-import { EnvelopeSimple, Lock } from "@phosphor-icons/react";
+import { EnvelopeSimple, Eye, EyeClosed, Lock } from "@phosphor-icons/react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import LogoParrot from "../../assets/LogoParrot.svg";
 import Button from "../Button";
@@ -13,14 +14,23 @@ interface AuthProps {
 }
 
 export default function Auth(props: AuthProps) {
+  const [visible, setVisible] = useState(false);
+
   return (
     <div className="flex flex-col items-center justify-center mt-16">
       <header className="flex flex-col items-center">
         <img src={LogoParrot} alt="Logo Rede social" />
-        <Heading size="xlg" className="mt-4">Sysmap Parrot</Heading>
-        <Text size="lg" className="mt-2 opacity-50">{props.authFormTitle}</Text>
+        <Heading size="xlg" className="mt-4">
+          Sysmap Parrot
+        </Heading>
+        <Text size="lg" className="mt-2 opacity-50">
+          {props.authFormTitle}
+        </Text>
       </header>
-      <form action="" className="flex flex-col items-stretch gap-3 w-full max-w-sm mt-12">
+      <form
+        action=""
+        className="flex flex-col items-stretch gap-3 w-full max-w-sm mt-12"
+      >
         <Text size="lg">Endereço de e-email</Text>
         <TextInput.Root>
           <TextInput.Icon>
@@ -33,16 +43,29 @@ export default function Auth(props: AuthProps) {
           <TextInput.Icon>
             <Lock />
           </TextInput.Icon>
-          <TextInput.Input placeholder="*********"></TextInput.Input>
+          <TextInput.Input
+            type={visible ? "text" : "password"}
+            placeholder="*********"
+          ></TextInput.Input>
+          <TextInput.Icon>
+            <div className="w-6 h-6"onClick={() => setVisible(!visible)}>
+              {visible ? <Eye size={24}/> : <EyeClosed size={24}/>}
+            </div>
+          </TextInput.Icon>
         </TextInput.Root>
 
-        <Button type="submit" className="mt-9">{props.submitFormButtonText}</Button>
+        <Button type="submit" className="mt-9">
+          {props.submitFormButtonText}
+        </Button>
       </form>
       <footer className="flex flex-col items-center gap-4 mt-9">
         <Text asChild size="sm">
           <Link
             to={props.routeName}
-            className="underline text-gray-text hover:text-gray-200">Não possui conta? Crie uma agora!</Link>
+            className="underline text-gray-text hover:text-gray-200"
+          >
+            Não possui conta? Crie uma agora!
+          </Link>
         </Text>
       </footer>
     </div>
