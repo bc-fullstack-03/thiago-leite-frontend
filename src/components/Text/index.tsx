@@ -17,7 +17,7 @@ export default function Text({ size = "md", asChild, children, className }: Text
                 {
                     "text-xs" : size === "sm",
                     "text-sm" : size === "md",
-                    "text-base": size === "lg"
+                    "text-lg": size === "lg"
                 },
                 className
             )}
