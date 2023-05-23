@@ -48,7 +48,7 @@ export default function Auth(props: AuthProps) {
             placeholder="*********"
           ></TextInput.Input>
           <TextInput.Icon>
-            <div className="w-6 h-6"onClick={() => setVisible(!visible)}>
+            <div className="w-6 h-6 cursor-pointer"onClick={() => setVisible(!visible)}>
               {visible ? <Eye size={24}/> : <EyeClosed size={24}/>}
             </div>
           </TextInput.Icon>
