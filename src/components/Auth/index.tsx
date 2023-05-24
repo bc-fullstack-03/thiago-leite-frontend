@@ -41,7 +41,7 @@ export default function Auth(props: AuthProps) {
       password: form.elements.password.value,
     };
 
-    // props.submitFormButtonAction(auth);
+    props.submitFormButtonAction(auth);
   }
 
   return (

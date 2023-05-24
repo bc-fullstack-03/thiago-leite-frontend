@@ -7,7 +7,7 @@ export default function SignUp() {
   async function handleRegister(auth: iAuth) {
     try {
       await api.post("/security/register", auth);
-      // navigate("/");
+      navigate("/");
     } catch (err) {
       alert("Erro na criação do usuário, tente novamente.");
     }
