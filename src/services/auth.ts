@@ -9,5 +9,3 @@ export default function getAuthHeader() {
 
   return authHeader;
 }
-
-// export default getAuthHeader;
