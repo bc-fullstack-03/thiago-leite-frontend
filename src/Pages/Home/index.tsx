@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import api from "../../services/api";
 import getAuthHeader from "../../services/auth";
+import Menu from "../../components/Menu";
+import Feed from "../../components/Feed";
 
 
 export default function Home() {
@@ -8,7 +10,7 @@ export default function Home() {
 
   useEffect(() => {
     async function getPosts() {
-      try{
+      try {
         const { data } = await api.get("/feed", authHeader);
         console.log(data);
       } catch (err) {
@@ -18,8 +20,11 @@ export default function Home() {
     }
     getPosts();
   }, [authHeader]);
-    
+
   return (
-    <h1>Home</h1>
-    );
+    <div className="w-screen h-screen flex">
+      <Menu />
+      <Feed />
+    </div>
+  );
 }
