@@ -1,5 +1,3 @@
-// import ParrotIconHome from "../../assets/ParrotIconHome.svg";
-// import House from "../Icons/House";
 import MenuLogo from "../Icons/MenuLogo";
 import MenuItem from "../MenuItem";
 import Text from "../Text";
@@ -15,9 +13,9 @@ export default function Menu() {
       </div>
 
       <ul className="pr-2">
-        <MenuItem menuTitle="Página Inicial" menuIcon />
-        <MenuItem menuTitle="Perfil" menuIcon />
-        <MenuItem menuTitle="Amigos" menuIcon />
+        <MenuItem route="/home" menuTitle="Página Inicial" menuIcon />
+        <MenuItem route="/profile" menuTitle="Perfil" menuIcon />
+        <MenuItem route="/friends" menuTitle="Amigos" menuIcon />
       </ul>
     </div>
   );
