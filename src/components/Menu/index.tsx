@@ -15,7 +15,9 @@ export default function Menu() {
       </div>
 
       <ul className="pr-2">
-        <MenuItem />
+        <MenuItem menuTitle="Página Inicial" menuIcon />
+        <MenuItem menuTitle="Perfil" menuIcon />
+        <MenuItem menuTitle="Amigos" menuIcon />
       </ul>
     </div>
   );
